@@ -16,17 +16,20 @@ const deleteColumn = (table) => {
 };
 
 /* table init */
-var tabledata = [{}, {}, {}];
+var tablerows = [{}, {}, {}];
 
 var table1 = new Tabulator("#tabla1", {
-  headerVisible: false,
+  headerVisible: true,
+  headerSort:false,
   height: 205, // set height of table (in CSS or here), this enables the Virtual DOM and improves render speed dramatically (can be any valid css height value)
-  data: tabledata, //assign data to table
+  data: tablerows, //assign data to table
   layout: "fitColumns", //fit columns to width of table (optional)
+
   columns: [
     //Define Table Columns
-    {},
-    {},
-    {},
+    {editor:"input",editableTitle:false,title:"id"},
+
+    {editor:"number",editableTitle:true,title:"Value 1"},
+    {editor:"number",editableTitle:true,title:"Value 2"},
   ],
 });
