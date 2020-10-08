@@ -1,20 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css">
     <script src="/node_modules/jquery/dist/jquery.min.js"></script>
     <script src="/node_modules/tabulator-tables/dist/js/tabulator.min.js"></script>
-    <link rel="stylesheet" href="/node_modules/tabulator-tables/dist/css/tabulator.min.css">
+    <link
+      rel="stylesheet"
+      href="/node_modules/tabulator-tables/dist/css/tabulator.min.css"
+    />
     <title>noc</title>
-</head>
-<body>
-    <div id="tabla1">
-    </div>
+  </head>
+  <body>
+    <div id="table1"></div>
+    <div id="table2"></div>
     <button type="button" onclick="addRow(table1)">Add Row</button>
     <button type="button" onclick="addColumn(table1)">Add Column</button>
     <button type="button" onclick="deleteRow(table1)">Delete Row</button>
     <button type="button" onclick="deleteColumn(table1)">Delete Column</button>
+    <button type="button" onclick="changeTable()">Cambiar</button>
     <script src="table.js"></script>
-</body>
+  </body>
 </html>
