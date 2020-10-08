@@ -8,8 +8,8 @@ const headerContextMenu = [
     label: "Delete Column",
     action: function (e, column) {
       if (getColsSize(table1) > 3) column.delete();
-      console.log(ID_COL)
-      console.log(getColsSize(table1))
+      console.log(ID_COL);
+      console.log(getColsSize(table1));
     },
   },
 ];
@@ -29,6 +29,7 @@ const showDiv = (divId) =>
   document.querySelector(`#${divId}`).classList.remove("hide");
 
 const changeTable = () => {
+  table2.setData([{values:'xd'},{values:'xd2'}])
   if (TABLE2.classList.contains("hide")) {
     hideDiv("table1");
     showDiv("table2");
@@ -104,5 +105,4 @@ let table2 = new Tabulator("#table2", {
   layout: "fitColumns", //fit columns to width of table (optional)
   columns: table2cols,
 });
-
 hideDiv("table2");
