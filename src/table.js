@@ -17,7 +17,7 @@ const rowContextMenu = [
   {
     label: "Delete Row",
     action: function (e, row) {
-      if (getRowsSize(table1) > 3) row.delete();
+      if (getRowsSize(table1) > 2) row.delete();
     },
   },
 ];
