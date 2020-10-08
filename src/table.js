@@ -1,5 +1,7 @@
 const TABLE1 = document.querySelector("#table1");
 const TABLE2 = document.querySelector("#table2");
+// const BTN_ADDROW = document.querySelector("#btn_addrow")
+// const BTN_ADDCOL = document.querySelector("#btn_addcol")
 let ID_COL = 2;
 let ID_ROW = 2;
 
@@ -33,9 +35,13 @@ const changeTable = () => {
   if (TABLE2.classList.contains("hide")) {
     hideDiv("table1");
     showDiv("table2");
+    hideDiv("btn_addrow")
+    hideDiv("btn_addcol")
   } else {
     hideDiv("table2");
     showDiv("table1");
+    showDiv("btn_addrow")
+    showDiv("btn_addcol")
   }
 };
 /* *Row Manager*/
