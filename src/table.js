@@ -31,17 +31,17 @@ const showDiv = (divId) =>
   document.querySelector(`#${divId}`).classList.remove("hide");
 
 const changeTable = () => {
-  table2.setData([{values:'xd'},{values:'xd2'}])
+  table2.setData([{ values: "xd" }, { values: "xd2" }]);
   if (TABLE2.classList.contains("hide")) {
     hideDiv("table1");
     showDiv("table2");
-    hideDiv("btn_addrow")
-    hideDiv("btn_addcol")
+    hideDiv("btn_addrow");
+    hideDiv("btn_addcol");
   } else {
     hideDiv("table2");
     showDiv("table1");
-    showDiv("btn_addrow")
-    showDiv("btn_addcol")
+    showDiv("btn_addrow");
+    showDiv("btn_addcol");
   }
 };
 /* *Row Manager*/
@@ -99,6 +99,7 @@ let table2rows = [{ id: 1 }, { id: 2 }];
 let table2cols = [
   { title: "values" },
   { title: "Maximin" },
+  { title: "Maximax" },
   { title: "Laplace" },
   { title: "Optim-pesim" },
   { title: "Minimax" },
@@ -111,4 +112,19 @@ let table2 = new Tabulator("#table2", {
   layout: "fitColumns", //fit columns to width of table (optional)
   columns: table2cols,
 });
+
+/* functions */
+
+const maximin = (values) => Math.max(values)
+const maximax = (values) => Math.max(values)
+const optimPesim = (op, max, min) => {
+  const optimism = op / 100;
+  const pesimism = 1 - optimism;
+  return optimism * max + pesimism * min;
+};
+const laplace = (values) => values / values.length;
+const minmax = (values) => Math.min(values);
+
+
+/* main */
 hideDiv("table2");
