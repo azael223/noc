@@ -114,7 +114,6 @@ let table2 = new Tabulator("#table2", {
 });
 
 /* functions */
-
 const maximin = (values) => Math.max(values)
 const maximax = (values) => Math.max(values)
 const optimPesim = (op, max, min) => {
