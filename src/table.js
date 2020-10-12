@@ -32,17 +32,19 @@ const showDiv = (divId) =>
 
 const changeTable = () => {
   table2.setData([{ values: "xd" }, { values: "xd2" }]);
-  if (TABLE2.classList.contains("hide")) {
-    hideDiv("table1");
-    showDiv("table2");
-    hideDiv("btn_addrow");
-    hideDiv("btn_addcol");
-  } else {
-    hideDiv("table2");
-    showDiv("table1");
-    showDiv("btn_addrow");
-    showDiv("btn_addcol");
-  }
+  console.log(table1);
+  // if (TABLE2.classList.contains("hide")) {
+    
+  //   hideDiv("table1");
+  //   showDiv("table2");
+  //   hideDiv("btn_addrow");
+  //   hideDiv("btn_addcol");
+  // } else {
+  //   hideDiv("table2");
+  //   showDiv("table1");
+  //   showDiv("btn_addrow");
+  //   showDiv("btn_addcol");
+  // }
 };
 /* *Row Manager*/
 const addRow = (table) => table.addRow({ id: ID_ROW++ });
@@ -55,10 +57,13 @@ const getRowsSize = (table) => table["rowManager"]["rows"].length;
 /* *Column Manager */
 const addColumn = (table) =>
   table.addColumn({
+    
     field: `col${ID_COL++}`,
     title: `Value ${ID_COL}`,
     editableTitle: true,
+    editor:'number',
     headerContextMenu: headerContextMenu,
+
   });
 
 // const deleteColumn = (table) =>
@@ -81,12 +86,14 @@ let table1 = new Tabulator("#table1", {
     { title: "id", editor: "input" },
     {
       editor: "number",
+      field:"col1",
       editableTitle: true,
       title: "Value 1",
       headerContextMenu: headerContextMenu,
     },
     {
       editor: "number",
+      field:"col2",
       editableTitle: true,
       title: "Value 2",
       headerContextMenu: headerContextMenu,
